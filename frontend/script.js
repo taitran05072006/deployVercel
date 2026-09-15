@@ -10,7 +10,7 @@ const loadProduct = async () => {
   const responsePanel = document.querySelector('#api-response');
 
   try {
-    const response = await fetch('http://localhost:8080/api/products/1');
+    const response = await fetch('https://deployvercel-bc6v.onrender.com/api/products/1');
 
     if (!response.ok) {
       throw new Error(`API trả về mã ${response.status}`);
