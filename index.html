@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ví dụ HTML, CSS và JavaScript</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">Bài học đầu tiên về web</p>
+      <h1>HTML + CSS + JavaScript</h1>
+      <p class="intro">
+        HTML tạo nội dung, CSS làm nội dung đẹp hơn, còn JavaScript giúp trang web phản hồi khi bạn tương tác.
+      </p>
+    </section>
+
+    <section class="demo-grid" aria-label="Các ví dụ tương tác">
+      <article class="demo-card">
+        <span class="number">01</span>
+        <h2>JavaScript thay đổi nội dung</h2>
+        <p>Nhập tên rồi bấm nút để JavaScript cập nhật lời chào bên dưới.</p>
+        <label for="name-input">Tên của bạn</label>
+        <div class="input-row">
+          <input id="name-input" type="text" placeholder="Ví dụ: An">
+          <button id="greet-button" type="button">Chào nhé</button>
+        </div>
+        <p id="greeting" class="result" aria-live="polite">Xin chào! Hãy thử nhập tên của bạn.</p>
+      </article>
+
+      <article class="demo-card accent-card">
+        <span class="number">02</span>
+        <h2>JavaScript đếm lượt bấm</h2>
+        <p>Mỗi lần bấm nút, một biến trong JavaScript sẽ tăng lên một đơn vị.</p>
+        <div class="counter" aria-live="polite">
+          <strong id="count">0</strong>
+          <span>lượt bấm</span>
+        </div>
+        <button id="count-button" class="wide-button" type="button">Tăng bộ đếm</button>
+      </article>
+    </section>
+
+    <footer>
+      <span class="dot"></span>
+      Mở ba file cạnh nhau để xem mỗi phần đang phụ trách điều gì.
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
