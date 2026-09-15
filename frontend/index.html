@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web app mini: Backend và MySQL</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  Tôi là Trần Gia Tài
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">Bài học đầu tiên về web</p>
+      <h1>Từ giao diện đến cơ sở dữ liệu</h1>
+      <p class="intro">
+        HTML tạo giao diện, backend xử lý yêu cầu, còn MySQL lưu dữ liệu. Hãy xem một sản phẩm đi qua cả ba lớp như thế nào.
+      </p>
+    </section>
+
+    <section class="architecture" aria-labelledby="architecture-title">
+      <div class="section-heading">
+        <p class="eyebrow">Luồng vận hành</p>
+        <h2 id="architecture-title">Frontend → Backend → Database</h2>
+        <p>Mỗi lớp có một nhiệm vụ riêng. Frontend gửi yêu cầu, backend lấy dữ liệu từ MySQL rồi trả JSON về cho trình duyệt.</p>
+      </div>
+      <div class="flow-grid">
+        <article class="flow-step">
+          <span class="flow-icon">01</span>
+          <h3>Frontend</h3>
+          <p>HTML, CSS, JavaScript hiển thị sản phẩm và gọi API.</p>
+          <code>GET /api/products/1</code>
+        </article>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <article class="flow-step backend-step">
+          <span class="flow-icon">02</span>
+          <h3>Spring Boot / Node.js</h3>
+          <p>Nhận request, kiểm tra logic và truy vấn dữ liệu.</p>
+          <code>ProductController</code>
+        </article>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <article class="flow-step database-step">
+          <span class="flow-icon">03</span>
+          <h3>MySQL</h3>
+          <p>Lưu sản phẩm trong bảng để lần sau có thể đọc lại.</p>
+          <code>SELECT * FROM products</code>
+        </article>
+      </div>
+    </section>
+
+    <section class="product-section" aria-labelledby="product-title">
+      <div class="section-heading">
+        <p class="eyebrow">Dữ liệu mẫu từ database</p>
+        <h2 id="product-title">Một sản phẩm được trả về từ API</h2>
+      </div>
+      <div class="product-layout">
+        <article id="product-card" class="product-card" aria-live="polite">
+          <div class="product-image" aria-hidden="true">☕</div>
+          <div class="product-info">
+            <span id="product-category" class="product-category">Đang tải...</span>
+            <h3 id="product-name">Đang tải sản phẩm...</h3>
+            <p id="product-description">Backend đang lấy dữ liệu từ MySQL.</p>
+            <div class="product-meta">
+              <strong id="product-price">--</strong>
+              <span id="product-stock">Kho: --</span>
+            </div>
+          </div>
+        </article>
+        <div class="api-panel">
+          <div class="panel-label">Response từ API</div>
+          <pre id="api-response">Đang gọi GET /api/products/1...</pre>
+          <p class="panel-note">Frontend gọi API Spring Boot thật. API truy vấn sản phẩm từ MySQL rồi trả JSON về trình duyệt.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-grid" aria-label="Các ví dụ tương tác">
+      <article class="demo-card">
+        <span class="number">01</span>
+        <h2>JavaScript thay đổi nội dung</h2>
+        <p>Nhập tên rồi bấm nút để JavaScript cập nhật lời chào bên dưới.</p>
+        <label for="name-input">Tên của bạn</label>
+        <div class="input-row">
+          <input id="name-input" type="text" placeholder="Ví dụ: An">
+          <button id="greet-button" type="button">Chào nhé</button>
+        </div>
+        <p id="greeting" class="result" aria-live="polite">Xin chào! Hãy thử nhập tên của bạn.</p>
+      </article>
+
+      <article class="demo-card accent-card">
+        <span class="number">02</span>
+        <h2>JavaScript đếm lượt bấm</h2>
+        <p>Mỗi lần bấm nút, một biến trong JavaScript sẽ tăng lên một đơn vị.</p>
+        <div class="counter" aria-live="polite">
+          <strong id="count">0</strong>
+          <span>lượt bấm</span>
+        </div>
+        <button id="count-button" class="wide-button" type="button">Tăng bộ đếm</button>
+      </article>
+    </section>
+
+    <footer>
+      <span class="dot"></span>
+      Mở ba file cạnh nhau để xem mỗi phần đang phụ trách điều gì.
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

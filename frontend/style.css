@@ -64,6 +64,178 @@ h1 {
   line-height: 1.65;
 }
 
+.architecture,
+.product-section {
+  margin-bottom: 52px;
+}
+
+.section-heading {
+  max-width: 720px;
+  margin-bottom: 22px;
+}
+
+.section-heading h2 {
+  max-width: none;
+  margin-bottom: 10px;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+}
+
+.section-heading p:not(.eyebrow) {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.flow-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.flow-step {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--coral);
+  border-radius: 8px;
+  background: var(--card);
+}
+
+.backend-step {
+  border-top-color: var(--teal);
+}
+
+.database-step {
+  border-top-color: #d4933d;
+}
+
+.flow-icon,
+.panel-label,
+.product-category {
+  color: var(--coral);
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.flow-step h3 {
+  margin: 26px 0 8px;
+  font-size: 1.35rem;
+}
+
+.flow-step p {
+  min-height: 50px;
+  margin-bottom: 16px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+code,
+pre {
+  font-family: "SFMono-Regular", Consolas, monospace;
+}
+
+.flow-step code {
+  display: block;
+  overflow-wrap: anywhere;
+  color: var(--teal);
+  font-size: 0.73rem;
+}
+
+.flow-arrow {
+  align-self: center;
+  color: var(--coral);
+  font-size: 1.8rem;
+}
+
+.product-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.product-card {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  min-height: 230px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.product-image {
+  display: grid;
+  place-items: center;
+  background: #f7c37b;
+  font-size: 4.5rem;
+}
+
+.product-info {
+  padding: 28px;
+}
+
+.product-info h3 {
+  margin: 12px 0 8px;
+  font-size: 1.7rem;
+  line-height: 1.05;
+}
+
+.product-info p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.product-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.product-meta strong {
+  color: var(--teal);
+  font-size: 1.35rem;
+}
+
+.product-meta span {
+  color: var(--muted);
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 0.78rem;
+}
+
+.api-panel {
+  padding: 24px;
+  border-radius: 8px;
+  background: var(--ink);
+  color: #eef5e9;
+}
+
+.api-panel .panel-label {
+  color: #f7c37b;
+}
+
+.api-panel pre {
+  min-height: 145px;
+  margin: 18px 0;
+  overflow: auto;
+  color: #d5ebe4;
+  font-size: 0.75rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.panel-note {
+  margin: 0;
+  color: #aebfba;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
 .demo-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -221,6 +393,28 @@ footer {
 
   .demo-grid {
     grid-template-columns: 1fr;
+  }
+
+  .flow-grid,
+  .product-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .flow-arrow {
+    justify-self: center;
+    transform: rotate(90deg);
+  }
+
+  .product-card {
+    grid-template-columns: 110px 1fr;
+  }
+
+  .product-info {
+    padding: 20px;
+  }
+
+  .product-info h3 {
+    font-size: 1.35rem;
   }
 
   .demo-card {
